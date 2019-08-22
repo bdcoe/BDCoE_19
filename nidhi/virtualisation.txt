@@ -1,0 +1,24 @@
+Virtualisation is a process of creating a virtual environment.By this method we
+can run multiple operating systems on the same hardware.
+
+Virtualisation can be categorised into the following two types:
+1.Type 1 virtualisation
+2.Type 2 virtualisation
+
+Type 1 virtualisation: In this type we can run multiple operating systems on the
+hardware directly but we need to install management software for that.This is
+faster as compared to type 2 because it has direct access to the hardware and
+no software is present in between.Also it is more efficient because each os
+takes only required amount of memory independent of the partitions done.
+    
+ 
+Type 2 virtualsation:In this type we can run multiple operating systems by 
+installing a VM ware or virtual box on top of the pre-existing operating
+system.This is slower and less efficient than type 1 as in this each os takes
+memory according to the partition done irrespective of its usage.It is more 
+protective than the previous one as if the os present on vm ware gets 
+corrupted then it effects the virtual box only and the hardware remains safe.
+
+ 
+
+    
