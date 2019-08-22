@@ -1,0 +1,13 @@
+git init :- To turn a local directory into a git repository
+git add <filename or .> :- To add files in the staging area so that you can commit them in your project
+git commit -m "Comments" :- Records all the changes made to the files . Each commit has a uniqe ID
+git status :- Shows the current state of the repository
+git config :- To assign name and email to commits on a local computer
+git checkout :- To switch branch 
+git branch :- To know the cuurent branch or to create new branch
+git merge :- to merge the cuurrent branch with master
+git clone :- Creates a local working copy of a remote repository
+git push :- Sends local commits to remote repository
+git pull :- to download files from remote repository in local directory 
+
+
