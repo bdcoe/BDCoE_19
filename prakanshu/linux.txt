@@ -1,0 +1,45 @@
+##LINUX
+linux is the open source operating system .ubuntu is a platform of operating system linux
+
+#BENEFITS
+open source
+no worrier for the antivirus
+
+#file system
+*root
+*user
+*home
+
+#types of user
+*root user
+*regular user
+*service user
+
+$-> in ubuntu this symbol means we are at the home page
+
+#path
+there are two types of path in ubuntu
+*ABOSULE PATH- from home to file
+*RELATIVE PATH-diretly we refer to the path
+
+#file permission
+->r-read
+->w-write
+->x-execute
+
+#COMMAND
+ls- to display the list
+cd- to change directory
+mkdir-to make the new directory
+cd ..-to come out from the directory
+cd - -to return to previous directory
+nano- to make a txt file
+gedit - same as nano
+sudo -it is for super user
+touch-we can create an empty file and save it
+
+#PACKAGES
+sudo apt-get install dkms
+sudo apt-get update
+sudo apt-get upgrade
+
