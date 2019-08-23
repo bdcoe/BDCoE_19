@@ -1,0 +1,23 @@
+Git is a command line interface(CLI) tool.It is a distributed version control system.It is free and open source.It can have multiple
+branches which are independent of each other.The branch on which we usually work is called the Master Branch.There are several other
+branches as well and the master branch has the access to all those branches.
+    Suppose the code is divided into branch 1,2 and 3.Now if the code in branch 1 runs correctly then the master branch will merge the 
+branch else it will delete that branch.Similarly for branch  2 and 3 also.
+
+Few of the git coommands are as follows:
+
+git init:it is used to start a new repository
+git commit -m:it records or snapshots the file permanently so that we can see the changes in the file.  
+git add .:adds the files
+git add -a:adds two files
+git status:list all the files that have to be commited
+git log:shows the history of the current branch 
+git branch:shows in which branch you are 
+git checkout -b branchname:creates a new branch and switches to it
+git checkout branchname:switches to that branch
+git push origin branchname:this command sends the changes in the branch to the repository
+git stash:stores all the modified tracked files
+git rm file:deletes the file from your working directory
+git clone url:use to clone a repository from the given url into the directory
+
+
