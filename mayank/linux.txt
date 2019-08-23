@@ -1,0 +1,13 @@
+
+Linux is a open source software.Here open source means:
+*Freedom to run the program for any purpose.
+*Freedom to redistribute copies.
+Some of the basic linux commands are;
+ls-list directory contents.
+cd-changes directories.
+rm-removes files and directories.
+mkdir-makes directories.
+touch:used to create a file.
+mv:move files through the command line.
+nano:used to create a file.
+    
