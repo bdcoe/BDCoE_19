@@ -1,0 +1,9 @@
+Virtual works as illusion for computer.
+Using Virtualisation we can run different Opeating system on other operating system.
+there are two type of Virtualisation Type 1,Type 2.
+In Type 1 we have,
+Hardware -> Operating system -> Hypervisor -> Operating system
+In type 2 we have,
+Hardware -> Hypervisor -> Operating System.
+
+Generally,we preferred type 2 virtualisation as in it there is no fear of lossing data on ur genuine operating system.In this,only require part of memory is used. 
