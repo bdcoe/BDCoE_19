@@ -1,0 +1,42 @@
+hadoop:
+	hadoop has 2 parts
+	file storing  and process managing
+ 
+it runs with the help of daemons
+
+5 daemons of hadoop 1
+	i) datanode
+	ii) namenode
+	iii) subnode
+	iv) task manager
+	v) job manger
+5 daemons of hadoop 2
+	i) datanode
+	ii) namenode
+	iii) subnode
+	iv) resource manager
+	v) node manager
+
+HDFS:
+	..data is stored in blocks of default size of 128 MB.
+	read and write operations :
+	   the namenode manages all the read and write operations. client requests the address of
+	   blocks at the data is to be wriiten or read . namenode looks up the metadata and sends IPs of the blocks. the client request these ips from switch. the switch handles the
+	      request and reads or writes the data in blocks located in racks. switch confirms the  operation to the client. also to the namenode if the operation is a write operation.
+	       the namenode updates the information in the metadata.
+	   
+	   the subnode keeps the backup of the namenode in the form of fs images and editlogs. edit logs are kept for one hour.
+	   
+
+running hadoop:
+	commmands -
+		sudo start-all.sh
+	it runs at two ports:
+		i) localhost:8088
+			shows running processes and disk usages etc 
+		ii) localhot:9807
+			for managing all files stored
+	how to put files in hadoop:
+		command -
+		hdfs dfs put -d "source/directory/file.txt" "/destination/path"
+
