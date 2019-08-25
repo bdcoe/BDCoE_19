@@ -1,0 +1,22 @@
+hadoop1:
+       *uses HDFS(hadoop distributed file system) for storage.
+       *uses MAP REDUCE for processing of data.
+       *Is based on master slave architecture,i.e all slaves connected to a single masterand if master dies or become deactivated,
+        wholesystem dies and files and meta data which master keeps get deteriorated.
+       *Daemons:
+          #NAMENODE
+          #DATANODE
+          #SECONDARY NAMENODE
+          #JOB TRACKER
+          #DATA TRACKER
+HADOOP2:
+       *uses HDFS for storage
+       *uses YARN(yet another resource negotiater) for managing data storage.
+       *Is also based on master slave architecture but consists of standby namenodes so that if one namenode got crashed,other can
+        take the responsibility.
+       *Daemons:
+           #NAMENODE
+           #DATANODE
+           #SEC.NAMENODE
+           #RESOURSE MANAGER
+           #NODE MANAGER
