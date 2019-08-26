@@ -1,0 +1,28 @@
+1 LAMBDA:define a function when to use it.
+      f=lambda a:a*a
+      result=f(5)
+      print(result) #result=25
+
+
+2 MAP:used to double or to increase ones value
+    map(func,iterator)  #iterator may be a list,sting,dictionary
+
+3 REDUCE:
+      #importing libraries
+      from functools import reduce
+      reduce(func,iterator)
+
+4 SPLIT FUNCTION:returns a list of strings after breaking the given string by
+the specified separator.
+   spli(separator,maxsplit)
+
+PROGRAM FOR SPARKS::
+
+
+from pysparks import sparkcontext,sparkconf
+conf=sparkconf().setAppname("word count")
+sc=sparkcontext(conf=conf)
+data=sc.textfile("file:///home/bdcoe/desktop/test.txt")
+lines=data.flatmap(lambda:x:x.split())
+pairs=pairs.reducebykey(lambda a:b:a+b)
+counts=saveastextfile("file:///home/bdcoe/desktop/output.txt")
