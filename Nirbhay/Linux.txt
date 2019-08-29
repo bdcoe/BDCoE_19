@@ -1,0 +1,10 @@
+Linux is a kernel . Kernel is the central part of OS . It is responsible for basic management function of OS . 
+There are many distribution of Linux available , Ubuntu is one of them .
+It is an open-sorce operating system . Linux is mostly used on servers .
+In Linux, file names are case sensitive while windows file name are case-insensitive .
+Advantages of Linux over Windows :
+1. Open source , users have full access to the source code and can change and edit it as per their requirement .
+2. Secure
+3. Lighter and faster
+4. Free
+5. More customizable 
