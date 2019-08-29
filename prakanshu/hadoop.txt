@@ -1,0 +1,33 @@
+##HADOOP
+*Hadoop is an Apache open source framework written in java.
+
+*in hadoop there are 42 ‘V’ in hadoop
+velocity
+verasity
+volume
+variety
+value
+
+*we have there types of data that ius generally found in the big data.
+1 STRUCTURED DATA- table form data
+2 UNSTRUCTURED – databin the form of videos and photoes
+3 SEMIAL STRUCTURED DATA-data stored in jason like html,xml.
+
+There are two version of hadoop
+1 HADOOP1
+2. HADOOP2
+
+##HADOOP1
+hadoop 1 consist of two parts
+1. HDFS -hadoop disturbuted file system,
+2. MR(MAPREPRODUCE)- disturbtion of data in a parallel processed way.
+DATA PROCESSING AND RESOURCE ALLOCATION
+
+##HADOOP2
+hadoop2 consist of again two parts
+1. HDFS-STORAGE
+2. YARN-RESOUCE MANAGER
+
+*the computer which is allocating task to other is khow as master computer 
+*the other computer which are doing work is know a sslave computers
+
