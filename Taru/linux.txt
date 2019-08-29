@@ -1,0 +1,33 @@
+ LINUX
+Linux is an operating system or a kernel. It is distributed under an open source license. Its functionality list is quite like UNIX.
+Benefits of using Linux are -
+
+    It’s an open Source OS
+    It’s free to use ,unlike windows you need not to pay
+    It is highly secure and therefore does not require antivirus
+    Stable and reliable . It can run non-stop without a reboot for years on end.
+    It’s case sensitive
+
+
+
+In Linux , files are ordered in a tree structure starting with the root directory and not in folders like C,D ,E...There are 3 types of files in Linux namely -
+
+    user
+    Home
+    User
+
+
+There are three types of users in Linux -
+
+    Regular user (denoted by $)
+    Root
+    Service. Few basic commands in Linux-1. ls :- to show the list 2. alt+l :- to clear the terminal 3. cd :- to change the directory
+    ls-a :- to show all the files in the list including the hidden files
+    cd .. :- exit
+    cd - :- to move to previous directory
+    mv :- to move the file from one location to another
+    mkdir :- to make directory
+    rmdir :- to remove the directory
+    SUDO :- Sudo program allows regular users to run programs with the security privileges of the superuser or root.
+
+
