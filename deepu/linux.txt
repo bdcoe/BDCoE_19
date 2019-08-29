@@ -1,0 +1,14 @@
+Linux is an open source software.In open source software we can contribute in backened freely.We can also debug the issues posted by people and reviewed by the organising member and if u got good
+reviews u will be contributor of that open source.
+Linux works on Command line as Window works on GUI.
+
+Some commands of linux and it's terminal are:
+ctrl+alt+t= Terminal
+cd = Change Directory or will go backest home directory if only cd is used
+mkdir =Create Directory
+rmdir =Delete Directory
+ls =list
+ls -a = Hidden list
+cd . =It will go one step back
+cd - =It will take u to prvs cmd
+nano/gedit = Text editor. 
