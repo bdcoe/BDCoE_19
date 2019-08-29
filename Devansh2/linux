@@ -1,0 +1,72 @@
+linux is a kernal based on character user interface.it helps us to 
+understand the working of computer system more effiently.
+One of the basic linux is ubuntu .
+some of the basic commands used in ubuntu are:
+* mkdir   - used in making of new directory .
+* cd - to change directories
+* cd .. - to go the previous directory .
+* ls - list all the directories present in folder.
+* ls-a  - list hidden files also.
+* pwd - gives the name of the present directory etc etc,
+
+            permission in ubuntu is given in 9 digits.
+
+* r - for reading only .
+* w - for writing also .
+* x - for execution of file
+permission is given by command :
+*sudo chmod rwx _w_ ___ {file name }
+or 
+*sudo chmod -R 777 {address of file name }
+      for giving ownership of any folder/file:
+*sudo chown -R yourusername {address of file}
+
+ first 3 is given for user next 3 for   group and next 3 for others.
+                    Ubuntu is  a case sensitive language.
+   there are many more commands in ubuntu to learn.
+
+
+shortcuts used in ubuntu linux terminal
+
+
+clt+alt+T -> used for opening a new terminal.
+clt+shift+T -> used for opening a new tav in terminal 
+clt+L -> used for clearing a terminal screen .
+clt+A-> used for jumping to the first letter for aommand 
+clt+R ->used for opening the reverse menu (it search all the command that we have previously entered using the tags given by you)
+clt+Z -> stop any process .
+
+              sudo is a special tag if used before any command ,gives the superuser permission that is it allocts all the permissions required for accesing that commands
+          
+         It can be used as:
+
+-> sudo {command}
+or -> {command}
+       sudo!!
+
+   sudo commands requires password authentication of the administrator.
+  one more interesting command used in terminal is 
+....* ssh
+ we can access different computers on same network using ssh(secure shell) command :
+ -> ssh your_pc_name@ip_address
+  some of the more fun commands of linux are :
+-> banner something 
+   ####    ####   #    #  ######   #####  #    #     #    #    #   ####
+ #       #    #  ##  ##  #          #    #    #     #    ##   #  #    #
+  ####   #    #  # ## #  #####      #    ######     #    # #  #  #
+      #  #    #  #    #  #          #    #    #     #    #  # #  #  ###
+ #    #  #    #  #    #  #          #    #    #     #    #   ##  #    #
+  ####    ####   #    #  ######     #    #    #     #    #    #   ####
+
+-> cmatrix
+  random numbers start drooping like rain
+-> espeak {any word}
+    produces sound of that word 
+
+
+
+
+            
+
+
+
