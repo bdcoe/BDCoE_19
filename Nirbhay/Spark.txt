@@ -1,0 +1,6 @@
+Spark is an open source scalable ,parallel environment for analytic operation .
+It distributes data across a cluster and then processes it paralelly .
+Spark code can be written in Python,Java,Scala and R .
+Spark Core is the most vital component . It is responsible for I/O operations ,scheduling and monitoring .Entire Spark eco-system is built on top of this core.
+RDD(Resilient Distributed Dataset) represents a collection of items distributed across many compute nodes that can be processed in parallel .
+Spark is 100 times faster than map reduce .
