@@ -1,0 +1,91 @@
+                                    KAFKA
+Kafka is a messaging system which enables communication between producers and consumers using message based topics . It has replaced JMS ,AMQ8 ,etc
+
+There are two systems for messaging namely
+
+    point to point
+    Publish subscribe
+
+
+In point to pint messaging system one consumer can read a message at a time and after processing the message is lost
+In publish subscribe messaging system many consumers can read a message at a particular time and the message is not lost after processing . In this system message producers are known as publish and Kafka consumers are known as subscribers .
+
+ARCHITECTURE:
+
+    producers
+    Consumers
+    Streamers
+    Connectors
+
+
+Producers permits the applicantion to publish a stream of records to one or more Kafka topics
+Consumers permits to takes the data from Kafka topic
+Streamers act as steam processor
+Connectors are used to connect consumers and producers
+
+COMPONENTS :
+
+    Topic : The data or message transferred from producers is categorised in topics
+    Producers : They are used to permit application to publish records
+    Consumers : They are used to take the records from Kafka
+    Brokers : used to maintain the data
+    Zookeepers: It provides broker with metadata regarding processes ,health of broker and leadership in partitions
+
+
+Partitions are the divisions made in topics sentences and Offsets are the indexing of messages done according to the time at which the message is published .
+
+WORKING :
+Producers sends messages which the brokers stores in partitions . The consumers then subscribe to the topic on which Kafka offers the current offset and save in zookeeper . The messages are then processed by consumers .
+
+FEATURES :
+
+    Uses general purpose tools
+    Make use of ingest pipelines for message transfer
+    Data is replicated with assured durability and availability
+    Fast and scalable
+    Fault tolerant
+    Keeps a log distributed processing
+    Messages persist even after processing
+    It’s performance rate is up to 100,000 messages/second
+
+
+INSTALLATIONS :
+Step 1. First you need to download the Kafka tar file
+
+Step 2. Untar the Kafka file
+
+Step 3. Goto the Downloads folder
+Command : cd Downloads
+
+Step 4 . Rename the file
+Command: sudo mv (kafka folder obtain) kafka
+
+Step 5 . Move the file to the local directory
+Command : sudo mv kafka /usr/local/kafka
+
+Step 6. Command : sudo chmod -R 777 /usr/local/kafka
+
+Step 7 . Command : sudo chown -R yourusername /usr/local/kafka
+
+Kafka is almost installed
+
+Step 8 . Get out of this folder.
+Command : cd
+Step 9. Go to the folder in which Kafka is installed
+Command : cd / usr/ local/ Kafka
+
+Step 9 . START THE ZOOKEEPER
+Command : cd /usr/local/kafka;./bin/zookeeper-server-start.sh config/zookeeper.properties
+
+Step 10.START THE KAFKA SERVER
+Command : cd /usr/local/kafka;./bin/kafka-server-start.sh config/server.properties
+
+Step 11. Create the topic
+Command : /bin/kafka-topics.sh --zookeeper localhost:2181 --create --topic ( topic name ) --partitions 2 --replication-factor 1
+
+Step 12. Create the console producer
+Command : ./ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic ( topic name )
+
+Step 13. Create the console consumer
+Command : ./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic ( topic name )
+
