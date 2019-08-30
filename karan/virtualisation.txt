@@ -1,0 +1,25 @@
+
+	Virtaulisation in operating system means using a software for running different operating system in a single computer system.
+	It means we can run different different applicaltions requiring different operating system concurrently.
+	The operating systems donot interfere in their works i.e. for accessing hardware.
+	
+	There are two types of virtualistion in operating system:-
+	1. Type1 virtualisation 
+	2. Type2 virtualisation
+
+	Type1 virtualisation -> In this type , there is a main operating system which is also called host operating sytem.
+				and the other operating systems are present in virtual box,vmware etc..
+
+		merits ->  If system gets corrupted then there is no effect on hardware.
+			   We can take snapshots to recover our lost one.
+
+		demerit -> As there is no direct access to hardware, so there is a lack of speed.
+
+
+
+	Type2 virtualisation  -> In this one , there is no main operating system. On the hardware there is a layer of hypervisor
+				 which is used for managing the processors,memory so that it can supply to os what they want.
+
+		merits -> As there is a direct access with hardware so you will experience a good speed.
+
+		demerits -> If system gets corrupted ,then all the impact can also be seen on hardware,and data can also be lost.    
