@@ -1,0 +1,51 @@
+Spark is platform for fast cluster computing . It uses cases which are focused on complex iterative machine learning algorithm implementation. It is an open source software which can access HADOOP . It provides interactive batch and stream processing.
+
+FEATURES :
+
+    In memory computation
+    Lazy Evaluations
+    Fault tolerance
+    Immutability
+    Persistence
+    Parallel processing
+    High processing speed
+
+
+These are the following 6 components of Spark :
+
+    Spark core - The Center point
+    Spark SQL- To run SQL
+    Spark streaming - For live streaming of data .It divides the data into micro batches and then run on core
+    Spark MLib - It is used for I’m memory computation
+    Spark Graphx
+    Spark R - for front end
+
+
+RDD - It stands for Resilient Distributed Dataset
+It is basic unit providing distributed collection of elements at cluster node
+There are 3 ways of creating this :
+
+    Parallelised Collection
+    External Datasets
+    Existing RDD
+
+
+Following operations can be performed on RDD:
+
+    Transformation - to make new file from existing RDD
+    Action - it is used to return final results to the driver
+
+
+WORKING -
+It takes the input data divides it into batches . The spark engine works on these batches and return the final stream
+
+LIMITATIONS -
+
+    No real time processing
+    No file management
+    It is cost inefficient as it makes use of memory
+    Less number of algorithms are provided in mlib
+    Iterative processing
+    Manual optimisation
+    Window criteria is used as it can work only on time based windows and not on record based windows
+
