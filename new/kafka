@@ -1,0 +1,37 @@
+
+Apache kafka is a distributed messaging system defined on pub-sub messaging system.Kafka consists of queues in which messages 
+area arranged which include a high volume of data.
+*It provide real time processing to the users.
+*It does not include latency,have fault tolerant properties .
+*It is reliable,durable and can process or transfer large sets of data.
+*data is stored on the disk which can be easily accessed by caching.
+*As kafka is known for its real time processing,it can compute 2 million operations per second and is 100 times faster than 
+ Hadoop.
+
+BASIC TERMINOLOGIES INCLUDED:
+
+1 TOPIC:Messages belonging to the particular category are called topics.these are further divided into partitions containing 
+        data sets.For each topic kafka has minimum 1 partition.
+
+2 PARTITION:topics are subdivided into partitions.or topics can be disjointed unions of partitions .
+
+3 PRODUCER: Application generating data is called producer.
+             eg:twitter,fb,you tube etc
+
+4 CONSUMER:Application suscribing data or acessing data is called consumer.consumer acess data from brokers(kafka brokers).
+
+5 OFFSET:Each partion have a specific ID called offset.consumer and producer identify paritions through their offset ID.
+
+6 REPLICAS: These are the backups for partitions stored in brokers.i.e if one fails then then the replica can be used.
+
+7 BROKERS: Kafka brokers have the partitions consisting  data ,which can be accessed by consumers.each partition is identified 
+           by its offset no. 
+           suppose we have n paritions and m brokers.,then:
+           if(n=m)-one parition will go to one broker
+           if(n>m)-first all brokers will get 1 parition then the remaining partitions are copied to second columns of brokers
+           if(m>n) each partion will be copied to a broker and leaves the remaining ones.
+8 KAFKA CLUSTER: Group of kafka brokers are called kafka cluster.it includes various produers,consumers,a zookeper.
+
+9 LEADER:Zookeper appoints a leader in each kafka broker and it is responsible for all the reads and writes in partions.
+
+10 FOLLOWER: It follows leader and if the leader fails one of the follower becomes new leader.
