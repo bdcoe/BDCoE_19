@@ -1,0 +1,15 @@
+Messaging system refers to the transfer of data feom one application to another without indulging in path followed.A distribu-
+ted messaging system is dependent on queues containing data.messages are queued between sender and receiver i.e producer and 
+consumer.There are two types of messaging systems-
+*Point to point messaging system
+*Publish-suscribe messaging system(pub-sub )
+
+POINT TO POINT:messages are arranged in a queue.a single consumer can acess the message at time.after accesing the message ,it 
+will dissapear from the queue.The consumer will acees the nearest message for it.
+        
+               SENDER -------------QUEUE--------CONSUMER
+               
+PUB-SUB :Messages are arranged in a topic here.any message can be accesed or processed by any consumer,may two at a time.and 
+message will not dissapear after being acessed.Here, message producers are called publishers and message consumers are called 
+suscribers.
+EXample-dish tv
