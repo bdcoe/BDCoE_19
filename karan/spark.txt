@@ -1,0 +1,36 @@
+ 
+
+	Spark is an open source framework for prcessing the data.It is 100 times faster for computing the data as the data is 		processed in memory. Almost real time data processing is done by it.
+	It support lazy evaluation as it memorize what tranformations it has to perform but donot implement them .whenever action
+	is  required then all the transformations are done.
+
+	SPARK had its own datastructure called RDD
+	RDD ->  It is a Resilient distributed dataset.Every transformation creates new RDD.
+		All the data is stored in RDD.
+
+		THere are 3 way to create a RDD :
+
+		1.  Parallelized connections.
+		2.  From another RDD.
+		3.  External DaTA.
+
+	
+	Operations on RDD: 1. TRansformation ->  It creates a new RDD.
+						e.g. map,reduceByKey etc..
+
+			   2. Action  ->   It donot creates a new RDD.
+					  e.g. save etc..
+
+
+	Spark Core ->  It is the part where processing is done. IT is a scheduler.
+
+
+
+
+	Spark Streaming is used for data streaming so that it can be processed in real time.
+
+	It supports various libraries like MLliB for machine learning ,SparkSQL for performing queries in dataset.
+
+	Code can be written iin various languages like python,java,scala. which was not present in hadoop.
+
+	
