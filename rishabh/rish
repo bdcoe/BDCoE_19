@@ -1,0 +1,16 @@
+Numpy is a general purpose array processing packagewhich can execuete various multidimensional array very easilyin a efficient waywith python and with a various databases
+How we can work on numpy?
+To implement numpy in pyhton we can understand in this way.
+import numpy as np
+a=np.array([[1,2,3],[3,4,5]])
+print(a)
+this will help to print multidimensional arrays using numpy
+print("adding 1 to every element: ",a+1)
+print("multiplying 2 to every element: ",a*2)
+print("transpose of an array :",a.T)
+print("to get maximum of array: ",a.max())
+in numpy we can also reshape a array in a different orientation by-
+a=a.reshape(r,c)
+where r=row c=column
+and in numpy axis=1 is called row and axis=0 is called column
+..
