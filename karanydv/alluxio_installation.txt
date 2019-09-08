@@ -1,0 +1,49 @@
+STEP1:  download binaries: download latest version from this link https://www.alluxio.io/download/
+
+STEP2:  extract the binaries and place the folder in /usr/local or any preferred location
+	in the download directory type:
+		tar -xvf file_name
+	rename the folder to a simpler name :
+		mv alluxio-2.0.0 alluxio 
+	move this folder
+		mv alluxio /usr/local/alluxio
+
+STEP3:  configuration
+	cd /usr/local/alluxio
+	
+	cp conf/alluxio-site.properties.template conf/alluxio-site.properties
+	
+	echo "alluxio.master.hostname=localhost" >> conf/alluxio-site.properties
+	
+    check for any errors: ./bin/alluxio validateEnv local
+   
+STEP4: Starting alluxio
+
+	first time step: ./bin/alluxio format
+	
+	
+	./bin/alluxio-start.sh local SudoMount
+	
+	Visit http://localhost:19999 and http://localhost:30000 to see the status of the Alluxio master and worker
+	
+
+
+####################################################################################################################
+
+word count using grep
+
+ ./bin/alluxio fs ls
+ 
+ ./bin/alluxio fs ls /
+ 
+ ./bin/alluxio fs copyFromLocal LICENSE /LICENSE
+   
+ ./bin/alluxio fs copyFromLocal  /home/karan/Downloads/Compressed/songdata.csv
+ 
+karan@mr-robot:/usr/local/alluxio$ time ./bin/alluxio fs cat /songdata.csv | grep -o -i ab | wc -l
+86871
+
+real	0m2.080s
+user	0m2.989s
+sys	0m0.215s
+
