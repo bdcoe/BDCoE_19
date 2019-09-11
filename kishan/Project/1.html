@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+<style>
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 2px;
+   text-align: left;
+}
+</style>
+</head>
+<body>
+  <div ng-app="">
+<table width="600px">
+  <caption><b>Application</b></caption>
+  <tr>
+    <th>Data</th>
+    <th>Entry</th>
+    <th>Hint</th>
+  </tr>
+  <tr>
+    <td>ToWhom</td>
+    <td><p><input type="text" ng-model="name"></p></td>
+    <td>Receiver</td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td><p><input type="date" ng-model="date"></p></td>
+    <td><p>Enter date of application</p></td>
+  </tr>
+  <tr>
+    <td>Subject:</td>
+    <td><p><input type="text" ng-model="subject"></p></td>
+    <td><p>Enter subject of application</p></td>
+  </tr>
+  <tr>
+    <td>Sir/Mam</td>
+    <td> <select ng-model="sir">
+      <option value="sir">Sir</option>
+      <option value="mam">Mam</option>
+    </select> </td>
+    <td><p>Enter Sir/Mam</p></td>
+  </tr>
+  <tr>
+    <td>Session</td>
+    <td><p><input type="text" ng-model="session"></p></td>
+    <td><p>Enter like 2019-20</p></td>
+  </tr>
+</table>
+<p>The {{name}}<br>Ajay Kumar Garg Engineering College<br>Ghaziabad</p>
+<p><b>Date:</b>{{date}}</p>
+</body>
+</html>
