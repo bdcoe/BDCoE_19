@@ -1,0 +1,26 @@
+kafka is basically a collection of topics partitioned in smaller messages.
+ 
+ WORkING:
+ 
+step1: The producer sends a message
+step2: then the message is partioned and stored in kafka brokers 
+step3: then consumer wil send a pull request to the kafka broker.
+step4: Zookeeper will identify which partition is well for the read or write operation and sends a offset no. of that partition.
+step5: consumer receives the message for the operations.
+step6:after consumer performs its computation,it sends an aknowelegdement to the Zookeeper that the task has been done.
+step7:after receiving the aknowlegdment kafka changes its offset and again sends it to consumer.
+step8:consumer also have the right to skip or rewinds the message.
+              
+ZOOKEPER:
+Zookeeper keeps an track of all the partitions.Zookeeper serves as the  interface between the Kafka brokers and consumers. 
+kafka stors various metadata in zookeeper as offset no.,topics,partitions etc.The leader election is also done by zookeper.
+since information is stored in the Zookeeper so it  replicates this data across its ensemble,in case failure of Kafka broker
+ Zookeeper does not affect the state of the Kafka cluster. Kafka will restore the state, once the Zookeeper restarts. 
+This gives zero downtime for Kafka. The leader election between the Kafka broker is also done by using Zookeeper in the 
+event of leader failure.
+
+
+
+ 
+
+ 
