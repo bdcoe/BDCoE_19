@@ -1,0 +1,25 @@
+
+
+		
+	Kafka is a open source messaging system and a robust queue, that can transmit messages from one application to 		        another.Messaging system is 
+	publish subscribe i.e. messages are  classified in topics and consumer can subscribe t that topic and can access every 		message related to that topic.
+
+	In kafka, there are following terms :
+
+	1.Producer ->   those who produces the messages.
+	2. Consumer ->   those who recieve message.
+	3. Broker -> It is a software that assembles all the data and classified that in topics and that data gets ditributed in 				different partitions and provide them a no. called offset.
+	4. Zooeeper -> It manage the data partitions and keep the metadata .
+			It decide that who is master among the one who keep the replicas of data partition.
+
+			These replicas ensures the fault tolerance.
+
+
+		For starting the zookeeper and kafka server we need to type follwing in bin dir in kafka 
+
+	1. zookeeper-start-server.sh config/zookeeper.properties
+	2. kafka-start-server.sh config/kafka.properties
+
+	To stop them, just replace start by stop
+ 
+			
