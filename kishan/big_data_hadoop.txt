@@ -1,0 +1,29 @@
+BIG DATA = very large amount of data
+It is used to manage large amount of data.
+
+FEATURES
+1.Volume   (volume of data is very large)
+2.velocity (increase in data is very fast)
+3.veracity (unaccurate)
+4.varity   (different types of data)
+5.value    (value of data is also high)
+
+HADOOP
+1.It is distributed file system based on horizontal scaling in which data is distributed in many  
+  slaves.
+2.Have two parts 
+  a.HDFS(hadoop distributed file system)  -  for storage
+  b.Mapreduce -for processing
+
+Hadoop Deamons
+1.Namenode (master)
+2.Datanode (slave) 
+3.secondary namenode
+4.resource manager
+5.jps
+
+DATA
+1.Structured eg. table 
+2.Semi-structured (jason)
+3.Unstructured eg. video
+

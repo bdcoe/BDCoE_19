@@ -1,0 +1,11 @@
+Today,We learn about Hadoop
+1.HDFS allows to dump any kind of data across the cluster
+2.MapReduce allows parallel processing of data stored in HDFS.
+Hadoop Ecosystem-
+1.Flume-used to inject data in HDFS
+2.Sqoop-used to inject structured data in HDFS
+3.YARN-Brain of ecosystem:performs processing activities
+4.HIVE-Analytical SQL on hadoop
+5.Spark-real time processing
+6.Pig-analyse large data set
+ 

@@ -1,0 +1,22 @@
+Linux is a kernel and Ubuntu is an operating system.
+Advantages of using ubuntu vs windows:-
+1.secure
+2.less number of user
+3.open source
+4.can rename a file while editing
+
+
+Filesystem 
+1.root
+2.home
+3.user
+
+$ = normal user
+# =root user
+
+Permissions
+1.Read
+2.Write
+3.execute
+
+
