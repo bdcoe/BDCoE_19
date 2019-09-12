@@ -59,9 +59,9 @@ th, td {
 </div>
 
 <div class="floatRight">
-<p>The {{name |capitalize}}<br>Ajay Kumar Garg Engineering College<br>Ghaziabad</p>
+<p>The {{name}}<br>Ajay Kumar Garg Engineering College<br>Ghaziabad</p>
 <p><b>Date:</b>{{date}}</p>
-<p><b>Subject:</b>{{subject|capitalize}}</p>
+<p><b>Subject:</b>{{subject}}</p>
 <p>{{sir}},<br>This is to bring under your kind notice that with the commencement of the new academic session {{session}}, we would like to take your sincere permission for using BDCoE Lab after college hours, i.e., 4:00 P.M.
 </p>
 <p>The lab would be fervently used by the BDCoE members for understanding and working on emerging technologies and build projects accordingly.
@@ -75,18 +75,6 @@ Big Data Centre of Excellence</p>
 </div>
 <script>
     var app = angular.module('myApp',[]);
-    app.filter('capitalize', function() 
-{
-      return function(input) {
-      x="";
-      y=input;
-      for (i=0;i<input.length;i++)
-      {
-      if(y[i-1]==" " || i==0) x=x+y[i].toUpperCase(); else x=x+y[i];
-      }
-      return (x);
-    }
-});
    </script>
 </body>
 </html>
