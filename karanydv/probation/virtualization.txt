@@ -1,0 +1,21 @@
+ACCORDING  to wikipedia virtualization refers to the act of creating virtual version of something, including computer hardware platforms, storage devices and network resoources.
+Technically virtualization is a broad term that refers to the abstraction of computer resources.
+
+ON the basis of resources it can be classified into two categories:
+	1. creation of many virtual resources from one hardware resource
+	2. creation of one virtual resource from many hardware resources
+
+ON the basis of application virtualization can be:
+	i)   server virtualization
+	ii)  client and desktop virtualization
+	iii) services and application virtualization
+	iv)  network virtualization
+	v)   storage virtaualization
+
+HYPERVISOR or virtual machine monitor (VMM) is a software, firmware or hardware that creates virtual machines.
+ther are two types of hypervisors:
+	1. type 1 - native or bare metal hypervisor
+		 this type of hypervisor interacts with the hardware directly and runs guest operating systems
+		
+	2. type 2 - hosted hypervisor
+		it runs on an operating system like a processs and it manages guest operating systems

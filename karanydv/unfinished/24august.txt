@@ -1,0 +1,11 @@
+##################### Competitive Programming ##################
+24 august 2019
+
+sorting algorithms
+
+1. counting sort
+2. merge sort
+3. quick sort
+
+
+4. aks algorithm
