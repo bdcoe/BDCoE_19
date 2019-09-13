@@ -1,3 +1,0 @@
-Installed xampp server
-Learnt Html via w3schools
-Learning php via w3schools
