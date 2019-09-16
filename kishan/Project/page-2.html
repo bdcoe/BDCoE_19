@@ -12,9 +12,10 @@ th, td {
    text-align: left;
 }
 .floatLeft { width: 50%; float: left; }
-.floatRight {width: 50%; float: right; }
-.floatL{width: 30%; float:left;}
-.floatR{width: 70%; float:right;}
+.floatRight {width: 50%; float: right;  }
+.floatL{width: 25%; float:left;}
+.floatR{width: 75%; float:right;}
+
 </style>
 </head>
 <body>
@@ -75,31 +76,22 @@ th, td {
 
 </div>
 
-<div id='print' class="floatRight">
-  <img  class="floatL" src=".\index2.jpg" alt="HTML5 Icon" style="width:90px;height:70px;" hspace="50">
-    <br><p class="floatR"><h2>BIG DATA CENTRE OF EXCELLENCE</h2>
-      <p align="centre"><b><u>Permission for using Labs during Holidays</u></b><p></p> 
+<div id='print' class="floatRight" >
+  <img  class="floatL" src=".\new2.png" alt="HTML5 Icon" style="width:140px;height:120px;" hspace=10>
+    <p class="floatR"><br><br><h3>BIG DATA CENTRE OF EXCELLENCE</h3><br><b><u>Permission for using Labs during Holidays</u></b></p> 
         
-       Big Data Centre of Excellence is organising a workshop on <b>{{subject}}</b>
-        
-        The number of students participating in workshop will be {{student}} and therefore we
+      <p> Big Data Centre of Excellence is organising a workshop on <b>{{subject}}</b></p>
+      <p>The number of students participating in workshop will be {{student}} and therefore we
         will be needing two labs to organize the workshop The workshop is planned to
-        be held in {{lab|capitalize}}
-        
-        Hence, the centre requests to allow the use of labs for conducting the
-        workshop
-        
-      <b>  Labs Required:</b> {{lab|capitalize}}
-
-       <b> Date:</b> {{fromdate|date : "dd.MM.y"}}-{{todate|date : "dd.MM.y"}}
-        
-        <b>Timings:</b>{{time1}}-{{time2}}  {{fromdate|date : "dd.MM.y"}}
-                       {{time3}}-{{time4}}  {{todate|date : "dd.MM.y"}}
-      </pre>
-
-
-
-
+        be held in {{lab|capitalize}}.</p>  
+      <p>Hence, the centre requests to allow the use of labs for conducting the
+        workshop.</p>
+      <p><b>  Labs Required:</b> {{lab|capitalize}}</p>
+      <p><b> Date:</b> {{fromdate|date : "dd.MM.y"}}-{{todate|date : "dd.MM.y"}}</p>
+      <p><b>Timings:</b>{{time1}}-{{time2}}  
+      </br> {{time3}}-{{time4}} </p> 
+      <br><br>
+      <p align=right><u>Dr. Anu Chaudhary</u><br>(HOD,I.T.Dept.)</p>     
 </div>
 </div>
 </div>
@@ -127,13 +119,7 @@ NewWindow.print();
 NewWindow.close();
 }
 function CopyToClipboard(containerid) {
-  if (document.selection) {
-    var range = document.body.createTextRange();
-    range.moveToElementText(document.getElementById(containerid));
-    range.select().createTextRange();
-    document.execCommand("copy");
-
-  } else if (window.getSelection) {
+   if (window.getSelection) {
     var range = document.createRange();
     range.selectNode(document.getElementById(containerid));
     window.getSelection().addRange(range);
