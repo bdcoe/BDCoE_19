@@ -1,0 +1,153 @@
+#importing libraries
+import socket
+import sys
+import requests
+import requests_oauthlib
+import json
+
+ACCESS_TOKEN ="1056489607385280512-Mxz6q9MQ3lTd4qqSiHtfuHZ1Zq7DD8"
+ACCESS_SECRET ="UmVU6mPV3MSHlo8MoIAp2JXIYqc8Rxc0U55n0N3bKcqnT"
+CONSUMER_KEY = "Ae5SNnc0Ar6hPrvRdBtXIbSy4"
+CONSUMER_SECRET ="Fb5ucvcockEIFNCwB5VpHDdTulGF9XrMqj02txewkV1yUivgiq"
+my_auth = requests_oauthlib.OAuth1(CONSUMER_KEY, CONSUMER_SECRET,ACCESS_TOKEN, ACCESS_SECRET)
+
+def get_tweets():
+	url = "https://stream.twitter.com/1.1/statuses/filter.json"
+	data = [("language", "en"),("locations","-130,-20,100,50"),("track","#")]
+	url1 = url + "?" + "&".join([str(i[0]) + "=" + str(i[1]) for i in data])
+	response = requests.get(url1, auth=my_auth, stream=True)
+	print(url1, response)
+	return response
+
+#sending twite to spark
+    
+def sending_to_spark(http_resp, tcp_connection):
+    for line in http_resp.iter_lines():
+        try:
+        	tweet = json.loads(line)
+        	text = tweet['text']
+        	print("Tweet Text: " + text)
+        	tcp_connection.send(text + '\n')
+        except:
+        	e = sys.exc_info()[0]
+        	print("Error: %s" % e)
+            
+ip ="10.10.40.228"
+port = 9009
+conn = None
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((ip,port))
+s.listen(1)
+print("Waiting for connecti000on...")
+connection, addr = s.accept()
+print("Connected... ")
+response = get_tweets()
+sending_to_spark(response, connection)
+
+from pyspark import SparkConf,SparkContext
+from pyspark.streaming import StreamingContext
+from pyspark.sql import Row,SQLContext
+
+def count(values, sum):
+	return sum(values) + (sum or 0)
+
+def context_instance(spark_context):
+        if ('sqlContextSingletonInstance' not in globals()):
+            globals()['sqlContextSingletonInstance'] = SQLContext(spark_context)
+            return globals()['sqlContextSingletonInstance']
+        
+
+def send_df_to_dashboard(df):
+
+	# dataframe converted into array hastag
+	top_tags = [str(t.hashtag) for t in df.select("hashtag").collect()]
+
+	# dataframe converted into array count
+	count = [p.hashtag_count for p in df.select("count").collect()]
+
+	# initialize and sending the data
+	url = 'http://localhost:5001/updateData'
+	requestdata = {'label': str(top_tags), 'data': str(count)}
+	response = requests.post(url, requestdata)
+        
+
+def process_rdd(time, rdd):
+	print("%s " % str(time))
+	try:
+    		#get spark sql singleton context from the current context
+            sql_context = context_instance(rdd.context)
+    	 #convert the rdd into row rdd
+            row_rdd = rdd.map(lambda w: Row(hashtag=w[0], hashtag_count=w[1]))
+    	   #create a df from the row rdd
+            hashtags_df = sql_context.createDataFrame(row_rdd)
+    	  #register the df as table
+            hashtags_df.registerTempTable("hashtags")
+			#get the top 10 hashtags from the table using SQL 
+            hashtag_counts_df = sql_context.sql("select hashtag, hashtag_count from hashtags order by hashtag_count desc limit 10")
+			#printing the data
+            hashtag_counts_df.show()
+			#prepare top 10 hashtags df and send them
+            send_df_to_dashboard(hashtag_counts_df)
+	except:
+            e = sys.exc_info()[0]
+            print("Error: %s" % e)
+            
+            
+#spark configuration
+conf = SparkConf()
+conf.setAppName("twitterstreamapp")
+#create spark context with the above configuration
+sc = SparkContext(conf=conf)
+sc.setLogLevel("errorrr")
+#Streaming Context for interval size 2 seconds
+ssc = StreamingContext(sc, 2)
+#rdd recovery
+ssc.checkpoint("checkpoint_twitterapp")
+# read data from port 9009
+dataStream = ssc.socketTextStream("10.10.40.228",9009)
+# spliting tweet into words
+words=dataStream.flatMap(lambda line: line.split(" "))
+#mapping 
+tags = words.filter(lambda w: '#' in w).map(lambda x: (x, 1))
+#totaling the hastage
+totals = tags.updateStateByKey(count)
+#processing of each rdd seperately one by one
+totals.foreachRDD(process_rdd)
+#strezming starts
+ssc.start()
+# wait til termintion
+ssc.awaitTermination() 
+
+from flask import Flask,jsonify,request
+from flask import render_template
+import ast
+app = Flask(__name__)
+labels = []
+values = []
+
+@app.route("/")
+def get_chart_page():
+	global labels,values
+	labels = []
+	values = []
+	return render_template('chart.html', values=values, labels=labels)
+
+@app.route('/refreshData')
+def refresh_graph_data():
+	global labels, values
+	print("labels now: " + str(labels))
+	print("data now: " + str(values))
+	return jsonify(sLabel=labels, sData=values)
+
+@app.route('/updateData', methods=['POST'])
+def update_data():
+	global labels, values
+	if not request.form or 'data' not in request.form:
+            return "error",400
+	labels = ast.literal_eval(request.form['label'])
+	values = ast.literal_eval(request.form['data'])
+	print("labels received: " + str(labels))
+	print("data received: " + str(values))
+	return "success",201
+if __name__ == "__main__":
+	app.run(host='10.10.40.228', port=5001)           
