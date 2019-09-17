@@ -1,0 +1,23 @@
+in the project i have used the following libraries
+ 1. import socket libraries-> socket is a way of connecting two node on a network vto communi te with each other
+    one socket listen to a particular port at an ip,while another socket reach to other to form connection
+server from a listen socket while client reachres out to srtver
+
+import socket
+s=socket.socket(socket.AF_INET,socket_STREAM)
+
+here socket.AF_INET->refers to the address familt ivp4
+socket,STREAM->refers to the port /TCP portol
+
+to find the ip we use
+ip=socket.gethostbyname('www.gogle.com')
+
+to connectto serve we use
+s.connect((host_ip,port))
+
+to print we use
+
+print "on port=%s"% (host_ip)
+
+output
+on port=173.194.40.19
