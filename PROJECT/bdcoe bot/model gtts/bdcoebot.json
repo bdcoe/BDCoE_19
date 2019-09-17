@@ -38,12 +38,8 @@
          "patterns": ["who are your alumini", "who are your seniors", "who are your members"],
          "responses": ["you check about our seniors and members on our website","the required content is provided on our website",],
          "context_set": ""
-        },
-        {
-          "tag":"bdcoe",
-          "patterns":["what is bdcoe","full form of bdcoe","location of bdcoe","where is your center"],
-          "responses":["u can found my office at the third floor of computer science department block "],
-          "context_set: ""
         }
+        
+        
       ]
 }
