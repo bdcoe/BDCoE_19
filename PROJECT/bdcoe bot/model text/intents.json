@@ -24,6 +24,11 @@
          "responses": ["I have lots of knowledge about big data  ", "knowledge is  on the menu!"],
          "context_set": ""
         },
+        {"tag": "do",
+         "patterns": ["Id like to buy something", "whats on the menu", "what do you recommend?", "could i get something to eat"],
+         "responses": ["I have lots of knowledge about big data  ", "knowledge is  on the menu!"],
+         "context_set": ""
+        },
         {"tag": "hours",
          "patterns": ["when are you guys open", "what are your hours", "hours of operation"],
          "responses": ["We are open 4pm-10pm Monday-Saturday!"],
@@ -52,7 +57,27 @@
         },
         {"tag": "hadoop",
          "patterns": ["what is hadoop", "tell me something about hadoop", "what do you know about hadoop"],
-         "responses": ["Apache Hadoop ( /həˈduːp/) is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model. you can have more information on https://bit.ly/2kQFbvh/ "],
+         "responses": ["Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model. you can have more information on https://bit.ly/2kQFbvh/ "],
+         "context_set": ""
+        },
+        {"tag": "spark",
+         "patterns": ["what is spark", "tell me something about spark", "what do you know about spark"],
+         "responses": ["Apache Spark is an open source parallel processing framework for running large-scale data analytics applications across clustered computers. It can handle both batch and real-time analytics and data processing workloads."],
+         "context_set": ""
+        },
+        {"tag": "kafka",
+         "patterns": ["what is kafka", "tell me something about kafka", "what do you know about kafka"],
+         "responses": ["Apache Kafka is a community distributed streaming platform capable of handling trillions of events a day. Initially conceived as a messaging queue, Kafka is based on an abstraction of a distributed commit log. Since being created and open sourced by LinkedIn in 2011, Kafka has quickly evolved from messaging queue to a full-fledged streaming platform."],
+         "context_set": ""
+        },
+        {"tag": "storm",
+         "patterns": ["what is storm", "tell me something about storm", "what do you know about storm"],
+         "responses": ["Apache Storm is a free and open source distributed realtime computation system. Apache Storm makes it easy to reliably process unbounded streams of data, doing for realtime processing what Hadoop did for batch processing. Apache Storm is simple, can be used with any programming language, and is a lot of fun to ."],
+         "context_set": ""
+        },
+        {"tag": "tools",
+         "patterns": ["what is big data tools", "tell me something about big data tools", "what do you know about big data tools"],
+         "responses": ["the main big data tools are 1.Hadoop 2.Kafka 3.storm 4.Spark"],
          "context_set": ""
         },
         {"tag": "location",
