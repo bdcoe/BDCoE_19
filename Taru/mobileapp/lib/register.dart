@@ -1,5 +1,55 @@
+
 import 'package:flutter/material.dart';
+import 'package:mobileapp/contact.dart';
 //import 'package:firebase_storage/firebase_storage.dart';
+
+String validateName(String value) {
+    String patttern = r'(^[a-zA-Z ]*$)';
+    RegExp regExp = new RegExp(patttern);
+    if (value.length == 0) {
+      return "Name is Required";
+    } else if (!regExp.hasMatch(value)) {
+      return "Name must be a-z and A-Z";
+    }
+    return null;
+  }
+  String validateRollNo(String value) {
+    String patttern = r'(^[0-9]*$)';
+    RegExp regExp = new RegExp(patttern);
+    if (value.length == 0) {
+      return "Roll Number is Required";
+    } else if(value.length != 10){
+      return "Roll number must 10 digits";
+    }else if (!regExp.hasMatch(value)) {
+      return "Roll Number must be digits";
+    }
+    return null;
+  }
+   String validateStudentNo(String value) {
+    String patttern = r'(^[0-9]*$)';
+    RegExp regExp = new RegExp(patttern);
+    if (value.length == 0) {
+      return "Student Number is Required";
+    } else if(value.length != 7){
+      return "Student number must 7 digits";
+    }else if (!regExp.hasMatch(value)) {
+      return "Student Number must be digits";
+    }
+    return null;
+  }
+  String validateEmail(String value) {
+    String pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regExp = new RegExp(pattern);
+    if (value.length == 0) {
+      return "Email is Required";
+    } else if(!regExp.hasMatch(value)){
+      return "Invalid Email";
+    }else {
+      return null;
+    }
+  }
+
+
 
 class Register extends StatefulWidget{
 
@@ -7,52 +57,14 @@ class Register extends StatefulWidget{
   State<StatefulWidget> createState() => RegisterState();
 }
 
-class Year{
-  int id;
-  String year;
-  Year(this.id,this.year);
-  static List<Year> getYears(){
-    return <Year>[
-      Year(1,'First'),
-      Year(2,'Second'),
-      Year(3,'Third'),
-      Year(4,'Fourth'),
-    ];
-  }
-
-}
-
 class RegisterState extends State<Register> {
 
-List<Year> _years = Year.getYears();
-List<DropdownMenuItem<Year>> _dropdownMenuItems;
-Year _selectedYear;
+var _years = ['First','Second','Third','Fourth'];
+var _currentItemSelected = 'First';
 
-@override
-  void initState() {
-    _dropdownMenuItems = buildDropdownMenuItems(_years);
-    _selectedYear = _dropdownMenuItems[0].value;
-    super.initState();
-  }
- 
-  List<DropdownMenuItem<Year>> buildDropdownMenuItems(List years) {
-    List<DropdownMenuItem<Year>> items = List();
-    for (Year year in years) {
-      items.add(
-        DropdownMenuItem(
-          value: year,
-          child: Text(year.year),
-        ),
-      );
-    }
-    return items;
-  }
- 
-  onChangeDropdownItem(Year selectedYear) {
-    setState(() {
-      _selectedYear = selectedYear;
-    });
-  }
+var _branches = ['CSE','IT','ME','CE','EI','ECE','EN'];
+var _currentItemSelected2 = 'CSE';
+
 
 final scaffoldKey = GlobalKey<ScaffoldState>();
 final _formKey = GlobalKey<FormState>();
@@ -60,12 +72,25 @@ final _formKey = GlobalKey<FormState>();
    @override
   Widget build(BuildContext context) {
    return Scaffold(
+     backgroundColor: Colors.black,
       appBar:AppBar(
-       title:Image.asset("assets/images/bigdataicon.jpeg",
+       actions:<Widget>[Image.asset("assets/images/bigdataicon.jpeg",
+      
          ),
+      ],
+         title: Text("Register",
+          style: TextStyle(
+              color: Colors.blue[700],
+            
+              fontSize: 25.0
+              ),
+        ),
          backgroundColor: Colors.white,
-       ),
-      body: Container(
+      ),
+      body:Padding(
+        padding: EdgeInsets.all(20),
+        child: Card(
+        color: Colors.white,
         child: SingleChildScrollView(
         child:Form(
           key: _formKey,
@@ -76,17 +101,23 @@ final _formKey = GlobalKey<FormState>();
           children: <Widget>[
           SizedBox(height: 15),
 
+         // Text("Name",
+        //    textAlign:TextAlign.left
+         // ),
+          SizedBox(height: 5),
           TextFormField(
-            decoration: InputDecoration(labelText: "Name",
+            decoration: InputDecoration(
+              labelText: "Name",
             hintText: "Your name"
             ),
             keyboardType: TextInputType.text,
-            validator: (String value){
-              if(value.trim().isEmpty){
-                return 'Name is Required';
-              }
-              return null;
-            },
+              validator: validateName,
+            //validator: (String value){
+            //  if(value.trim().isEmpty){
+            //    return 'Name is Required';
+             // }
+           //   return null;
+           // },
            ),
            SizedBox(height: 10,),
 
@@ -95,12 +126,7 @@ final _formKey = GlobalKey<FormState>();
             hintText: "1810011"
             ),
             keyboardType: TextInputType.phone,
-             validator: (val) {
-              if(val.length==7){
-                  return null;
-              }
-              return 'Invalid Student No.';
-            }
+             validator: validateStudentNo
 
           ),
             TextFormField(
@@ -108,12 +134,7 @@ final _formKey = GlobalKey<FormState>();
             hintText: "1802710132"
             ),
             keyboardType: TextInputType.phone,
-            validator: (val) {
-              if(val.length==10){
-                 return null;
-             }
-              return 'Invalid Roll No.' ;
-            }
+            validator: validateRollNo,
            ),
               
            SizedBox(height: 10,),
@@ -122,15 +143,68 @@ final _formKey = GlobalKey<FormState>();
             hintText: "example@gmail.com",
             ), 
             keyboardType: TextInputType.emailAddress,
+            validator: validateEmail,
            ),
            SizedBox(height: 10,),
-            Text("Year"),
-            DropdownButton(
-              value:  _selectedYear,
-              items: _dropdownMenuItems,
-              onChanged: onChangeDropdownItem,
-            ),
+           
+           Row(
+             children:<Widget>[
+           
+               Expanded(
+                 flex: 1,
+                 child:Column(
+                   children:<Widget>[
+                     Text("Year"),
+            DropdownButton<String>(
+              items: _years.map((String dropDownStringItem){
+                return DropdownMenuItem<String>(
+                  value:dropDownStringItem,
+                  child: Text(dropDownStringItem)
+                   );
+              }
 
+              ).toList(),
+
+              onChanged: (String newValueSelected){
+                setState(() {
+                  this._currentItemSelected = newValueSelected;
+                });
+              },
+              value: _currentItemSelected,
+            ),
+                   ]
+                 ),
+               ),
+             
+            SizedBox(width: 10,),
+            
+               Expanded(
+                 flex: 1,
+                 child:Column(
+                   children:<Widget>[
+                     Text("Branch"),
+            DropdownButton<String>(
+               items: _branches.map((String dropDownStringItem2){
+                return DropdownMenuItem<String>(
+                  value:dropDownStringItem2,
+                  child: Text(dropDownStringItem2)
+                   );
+              }
+
+              ).toList(),
+
+              onChanged: (String newValueSelected2){
+                setState(() {
+                  this._currentItemSelected2 = newValueSelected2;
+                });
+              },
+              value: _currentItemSelected2,
+            )
+                   ]
+                 ),
+               ),
+           
+             ]),
           SizedBox(height: 20,),
 
            RaisedButton(
@@ -141,17 +215,15 @@ final _formKey = GlobalKey<FormState>();
                         .showSnackBar(SnackBar(content:Text('Processing Data')));
                  }
              },
-           )
+         )
 
-          
-
-              ]
+                  ]
+                ),
+              ),
             ),
           ),
         ),
       ),
-    ),
-   );
+    );
   }
 }
- 

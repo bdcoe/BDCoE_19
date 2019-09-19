@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mobileapp/homepage.dart';
 import './register.dart';
 import './services.dart';
 import './team.dart';
 import './contact.dart';
+import './homepage.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -15,13 +17,11 @@ class HomeState extends State<Home>
   List<Widget> listpages=[
        Register(),
         Team(),
-        Scaffold(
-          backgroundColor: Colors.blue,
-        ),
+        Homepage(),
         Services(),
         Contact(),
       ];
-     int currentIndex=0;
+     int currentIndex=2;
      void onitemtapped(int index){
        print(index);
      setState(() {
