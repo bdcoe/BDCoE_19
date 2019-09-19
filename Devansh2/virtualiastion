@@ -1,0 +1,17 @@
+virtualisation is a method of running multiple operating systems or servers at
+ the same on the same 
+hardware or on the same base software.
+it  is of two types:
+*Type 1 Virtualisation
+* Type 2 Virtualisation
+
+
+In Type 1 virtualisation we have multiple operating systems are   
+running directly on the hardware with the help of a management software.
+This type of virtualisation is faster than type 2 as it uses dyanamic ram distribution system.
+ 
+          In Type 2 virtualisation we have multiple os running on basic os
+with the help of virtual machine or hypervisor.This is slower than the former
+one .
+    virtualisation of  servers can also be done . Example of server
+ virtualisation is internet.

@@ -1,0 +1,7 @@
+Apache Spark is a general-purpose & lightning fast cluster computing system. It provides high-level API. For example, Java, Scala, Python and R. Apache Spark is a tool for Running Spark Applications. Spark is 100 times faster than Big Data Hadoop and 10 times faster than accessing data from disk.
+
+Apache Spark was introduced in 2009 in the UC Berkeley R&D Lab, later it becomes AMPLab. It was open sourced in 2010 under BSD license. In 2013 spark was donated to Apache Software Foundation where it became top-level Apache project in 2014.
+Following are 6 components in Apache Spark Ecosystem which empower to Apache Spark- Spark Core, Spark SQL, Spark Streaming, Spark MLlib, Spark GraphX, and SparkR.
+Spark Programming is nothing but a general-purpose & lightning fast cluster computing platform. In other words, it is an open source, wide range data processing engine. That reveals development API’s, which also qualifies data workers to accomplish streaming, machine learning or SQL workloads which demand repeated access to data sets. 
+
+

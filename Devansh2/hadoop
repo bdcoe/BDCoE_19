@@ -1,0 +1,12 @@
+Apache Hadoop is the most popular and powerful big data tool, Hadoop provides world’s most reliable storage layer – HDFS, a batch Processing engine – MapReduceand a Resource Management Layer – YARN. 
+Hadoop is an open-source tool from the  Apache Software Foundation. 
+Open source project means it is freely available and we can even change its source code as per the requirements. If certain functionality does not fulfill your need then you can change it according to your need. 
+It provides an efficient framework for running jobs on multiple nodes of clusters. Cluster means a group of systems connected via LAN. Apache Hadoop provides parallel processing of data as it works on multiple machines simultaneously.
+
+
+Hadoop consists of three key parts –
+1.  Hadoop Distributed File System (HDFS) – It is the storage layer of Hadoop.
+2.Map-Reduce – It is the data processing layer of Hadoop.
+3.YARN – It is the resource management layer of Hadoop.
+
+
