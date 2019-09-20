@@ -72,13 +72,13 @@ except:
       output = numpy.array(output)
 
       with open("data.pickle", "wb") as f:
-            pickle.dump((words, labels, training, output), f)
+            pickle.dump((words, labels, training, output),f)
 
 tensorflow.reset_default_graph()
 
 net = tflearn.input_data(shape=[None, len(training[0])])
-net = tflearn.fully_connected(net, 8)
-net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 25)
+net = tflearn.fully_connected(net, 25)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
 net = tflearn.regression(net)
 
@@ -118,32 +118,40 @@ def chatbot():
           os.system(final) 
           break
 
-        results = model.predict([binary_of_data(inp, words)])
+        results = model.predict([binary_of_data(inp, words)])[0]
         results_index = numpy.argmax(results)
         tag = labels[results_index]
+        if results[results_index] > 0.50 :
 
-        for tg in data["intents"]:
-            if tg['tag'] == tag:
-                responses = tg['responses']
+            for tg in data["intents"]:
+                if tg['tag'] == tag:
+                    responses = tg['responses']
 
-        text=random.choice(responses)
-        print(" ")
-        print(text)
-        print("__"*40)
-        print(" ")
-        myobj = gTTS(text=text, lang=language, slow=False) 
-  
-        myobj.save("welcome.mp3") 
+            text=random.choice(responses)
+            print(" ")
+            print(text)
+            print("__"*40)
+            print(" ")
+            myobj = gTTS(text=text, lang=language, slow=False) 
+      
+            myobj.save("welcome.mp3") 
 
-        os.system("mpg321 welcome.mp3")
+            os.system("mpg321 welcome.mp3")
+        else :
+            
+
+            print(" ")
+            print("I Didn't Understand your question.Please try different question or check your spellings.")
+            print("__"*40)
+            print(" ")    
+
+            myobj = gTTS(text="I Didn't Understand your question.Please try different question or check your spellings.", lang=language, slow=False) 
+      
+            myobj.save("welcome.mp3") 
+
+            os.system("mpg321 welcome.mp3")
                
-
-   
-chatbot()
-	        
-
-        
-               
+          
 chatbot()
 
         

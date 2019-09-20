@@ -77,8 +77,8 @@ except:
 tensorflow.reset_default_graph()
 
 net = tflearn.input_data(shape=[None, len(training[0])])
-net = tflearn.fully_connected(net, 8)
-net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 25)
+net = tflearn.fully_connected(net, 25)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
 net = tflearn.regression(net)
 
@@ -111,30 +111,42 @@ def chatbot():
         inp = input("bdcoe bot: ")
         if inp.lower() == "quit":
           print(" ")
-          print("bye bye ")
+          print("Have a good day.")
           print("__"*40)
           print(" ")
-          final="espeak 'bye bye '"
+          final="espeak 'Have a good day. '"
           os.system(final) 
           break
 
-        results = model.predict([binary_of_data(inp, words)])
+        results = model.predict([binary_of_data(inp, words)])[0]
         results_index = numpy.argmax(results)
         tag = labels[results_index]
+        if results[results_index] > 0.5 :
 
-        for tg in data["intents"]:
-            if tg['tag'] == tag:
-                responses = tg['responses']
+            for tg in data["intents"]:
+                if tg['tag'] == tag:
+                    responses = tg['responses']
 
-        text=random.choice(responses)
-        print(" ")
-        print(text)
-        print("__"*40)
-        print(" ")
-        final="espeak '{}'"
+            text=random.choice(responses)
+            print(" ")
+            print(text)
+            print("__"*40)
+            print(" ")
+            final="espeak '{}'"
 
-        os.system(final.format(text)) 
+            os.system(final.format(text)) 
+
+        else:
+
+            print(" ")
+            print("I Didn't Understand your question.Please try different question or check your spellings.")
+            print("__"*40)
+            print(" ")    
+
+            final="espeak 'I Didnot Understand your question.Please try different question or check your spellings.'"
+
+            os.system(final) 
                
 
-   
+ 
 chatbot()
