@@ -4,9 +4,9 @@ function nextGeneration(){
     for (let i = 0; i < POPL; i++) {
         birds[i] = pickOne();
     }
-    for (let i = 0; i < POPL; i++) {
-        savedBirds[i].dispose();
-    }
+    // for (let i = 0; i < POPL; i++) {
+    //     savedBirds[i].dispose();
+    // }
     savedBirds = [];
 }
 

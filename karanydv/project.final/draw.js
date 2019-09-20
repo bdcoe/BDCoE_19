@@ -47,7 +47,7 @@ function draw(){
         poles=[];
         poles[0]=new Pole();
     }
-    // if(poles[0].x <300 )
+    //if(poles[0].x <100 )
     for(i=0;i<birds.length;i++){
         birds[i].update();
         if(poles[0].x + 75 > brd.x )
@@ -60,6 +60,8 @@ function draw(){
         pole.update();
     }
     image(gd,0,CANVAS_HEIGHT-120);
+    textSize(16);
+    text("Alive : "+birds.length,20,450)
     textSize(32);
     text("Gen : "+Gen,10,520);
     textSize(28);
@@ -68,9 +70,9 @@ function draw(){
 }
 
 
-// function keyPressed() {
-//   if (key == ' ') {
-//     birds[0].jump();
-//     console.log("SPACE");
-//   }
-// }
+function keyPressed() {
+  if (key == ' ') {
+    birds[0].jump();
+    console.log("SPACE");
+  }
+}

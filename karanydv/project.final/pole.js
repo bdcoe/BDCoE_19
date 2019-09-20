@@ -4,7 +4,7 @@ class Pole{
         this.length=288;
         this.x=CANVAS_WIDTH;
         this.y=random()*(256)+32;
-        this.velocity=-4;
+        this.velocity=-3;
     }
     draw(){
         image(pd,this.x,this.y-this.length,50,288);
@@ -12,7 +12,7 @@ class Pole{
     }
     update(){
         this.x+=this.velocity;
-        if(this.x<25)
+        if(this.x==24)
             score++;
         if(this.x < -75 )
             poles.shift();
