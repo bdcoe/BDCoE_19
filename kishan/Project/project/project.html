@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+<style>
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 2px;
+   text-align: left;
+}
+.floatLeft { width: 50%; float: left; }
+.floatRight {width: 50%; float: right; }
+
+</style>
+</head>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl" ng-cloak>
+      <div class="container">
+          <div class="floatLeft">
+<table width="700px" height="500px">
+  <caption><b>Application</b></caption>
+  <tr>
+    <th>Data</th>
+    <th>Entry</th>
+    <th>Hint</th>
+  </tr>
+  <tr>
+    <td>ToWhom</td>
+    <td><p><input type="text" ng-model="name"></p></td>
+    <td>Receiver</td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td><p><input type="date" ng-model="date" id='date'></p></td>
+    <td><p>Enter date of application</p></td>
+  </tr>
+  <tr>
+    <td>Subject:</td>
+    <td><p><input type="text" ng-model="subject" ></p></td>
+    <td><p>Enter subject of application</p></td>
+  </tr>
+  <tr>
+    <td>Sir/Ma'am</td>
+    <td> <select ng-model="sir">
+      <option value="Sir">Sir</option>
+      <option value="Ma'am">Ma'am</option>
+    </select> </td>
+    <td><p>Enter Sir/Ma'am</p></td>
+  </tr>
+  <tr>
+    <td>Session</td>
+    <td><p><input type="text" ng-model="session"></p></td>
+    <td><p>Enter like 2019-20</p></td>
+  </tr>
+</table>
+<br>
+<p>
+<button onClick="printto();">Print</button><br>
+<button id="button1" onclick="CopyToClipboard('print')">Copy</button>
+<br></p>
+<caption>Change font-size:</caption>
+<select onchange="myFunction1(this);">
+  <option>xx-small</option>
+  <option>x-small</option>
+  <option>small</option>
+  <option>medium</option>
+  <option>large</option>
+  <option>x-large</option>
+  <option>xx-large</option>
+  <option>100%</option>
+  <option>250%</option>
+  <option>2cm</option>
+  <option>100px</option>
+</select>
+
+</div>
+
+<div id='print' class="floatRight" contenteditable="true">
+<p>The {{name |capitalize}}<br>Ajay Kumar Garg Engineering College<br>Ghaziabad</p>
+<p><b>Date:</b>{{date|date : "dd.MM.y" }}</p>
+<p><b>Subject: </b><u>{{subject|capitalize}}</u></p>
+<p>{{sir}},<br>This is to bring under your kind notice that with the commencement of the new academic session {{session}}, we would like to take your sincere permission for using BDCoE Lab after college hours, i.e., 4:00 P.M.
+</p>
+<p>The lab would be fervently used by the BDCoE members for understanding and working on emerging technologies and build projects accordingly.
+</p><p>We will be highly obliged.
+  </p>
+<p>Thanking You
+<br>Yours Sincerely<br>
+Big Data Centre of Excellence</p>
+<p id="encl" style="display:none"><u><b>Encl:</b>List of members</u></p>
+<br><br>
+<p class="floatLeft"><b><u>Director</u></b></p>
+<p align=right class="floatRight"><b><u>Dr. Anu Chaudhary</u><br>(HOD,I.T.Dept.)</b></p>
+</div>
+</div>
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.filter('capitalize', function() 
+{
+      return function(input) {
+      x="";
+      y=input;
+      for (i=0;i<input.length;i++)
+      {
+      if(i==0) x=x+y[i].toUpperCase(); else x=x+y[i];
+      }
+      return (x);
+    }
+});
+function printto()
+{
+var divText  = document.getElementById("print").innerHTML;
+var NewWindow = window.open('','','width=600,height=600');
+var doc      = NewWindow.document;
+doc.write(divText);
+NewWindow.print();
+NewWindow.close();
+}
+function CopyToClipboard(containerid) {
+  if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNode(document.getElementById(containerid));
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+  }
+}
+function myFunction() {
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("encl");
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+} 
+app.controller('myCtrl', function($scope) {
+  $scope.subject= "Permission for using Big Data Centre of Excellence Lab after college hours.";
+});
+function myFunction1(selectTag) {
+  var listValue = selectTag.options[selectTag.selectedIndex].text;
+  document.getElementById("print").style.fontSize = listValue;
+}
+   </script>
+</body>
+</html>

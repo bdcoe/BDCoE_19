@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+<style>
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 2px;
+   text-align: left;
+}
+.floatLeft { width: 50%; float: left; }
+/* .floatRight {width: 50%; float: right;  } */
+.floatL{width: 25%; float:left;}
+/*.floatR{margin-left:100px;}*/
+</style>
+</head>
+<body>
+  <div ng-app="myApp" ng-cloak>
+      <div class="container">
+          <div class="floatLeft" id='p'>
+              <button type="button" style="display: none;" id="i" onclick="$('#floatLeft').remove();"  >Hello</button>
+<table width="600px">
+  <caption><b>Application</b></caption>
+  <tr>
+    <th>Data</th>
+    <th>Entry</th>
+    <th>Hint</th>
+  </tr>
+  <tr>
+    <td>Topic:</td>
+    <td><p><input type="text" ng-model="subject"></p></td>
+    <td>Topic of Workshop</td>
+  </tr>
+  <tr>
+    <td>No. of students</td>
+    <td><p><input type="text" ng-model="student"></p></td>
+    <td><p>Enter no. of students</p></td>
+  </tr>
+  <tr>
+    <td>Labs Required</td>
+    <td><p><input type="text" ng-model="lab"></p></td>
+    <td><p>Name of labs required</p></td>
+  </tr>
+  <tr>
+    <td>From Date</td>
+    <td><p><input type="date" ng-model="fromdate" id="date"></p></td>
+    <td><p>Workshop starts on..</p></td>
+  </tr>
+  <tr>
+    <td>To Date</td>
+    <td><p><input type="date" ng-model="todate"></p></td>
+    <td><p>Workshop ends on..</p></td>
+  </tr>
+  <tr>
+      <td>Timing
+      </td>
+      <td><p><input type="text" ng-model="time1">
+        <input type="text" ng-model="time2"></p></td>
+      <td><p>start time and end time</p></td>
+    </tr><tr>
+        <td>Timing2
+        </td>
+    <td><p><input type="text" ng-model="time3">
+      <input type="text" ng-model="time4"></p></td>
+    <td><p>start time and end time of another date</p></td>
+  </tr>
+</table>
+<br>
+<p>
+<button onClick="printto();">Print</button><br>
+<button id="button1" onclick="CopyToClipboard('print')">Copy</button>
+<button id="button2" onclick="removeDummy();">delete</button>
+</p>
+<caption>Change font-size:</caption>
+<select onchange="myFunction1(this);">
+  <option>xx-small</option>
+  <option>x-small</option>
+  <option>small</option>
+  <option>medium</option>
+  <option>large</option>
+  <option>x-large</option>
+  <option>xx-large</option>
+  <option>100%</option>
+  <option>250%</option>
+  <option>2cm</option>
+  <option>100px</option>
+</select>
+</div>
+
+<div id='print' class="floatRight" contenteditable="true">
+    <img  class="floatL" src=".\new2.png" alt="HTML5 Icon" style="width:80px;height:60px;" hspace=15>
+      <br><p class="floatR"><h3>BIG DATA CENTRE OF EXCELLENCE</h3><br></p>
+        <center><h4><b><u>Permission for using Labs during Holidays</u></b></h4></center> 
+     <p> Big Data Centre of Excellence is organising a workshop on <b>{{subject}}</b></p>
+      <p>The number of students participating in workshop will be {{student}} and therefore we
+        will be needing two labs to organize the workshop The workshop is planned to
+        be held in {{lab|capitalize}}.</p>  
+      <p>Hence, the centre requests to allow the use of labs for conducting the
+        workshop.</p>
+      <p><b>  Labs Required: </b>{{lab|capitalize}}</p>
+      <p><b> Date:</b> {{fromdate|date : "dd.MM.y"}}-{{todate|date : "dd.MM.y"}}</p>
+      <p><b>Timing:</b>{{time1}}-{{time2}}
+        <br>{{time3}}{{time4}}  </p>
+      <br><br>
+      <p class="floatLeft"><b><u>Director</u></b></p>
+      <p align="right"><b><u>Dr. Anu Chaudhary</u><br>(HOD,I.T.Dept.)</b></p>     
+</div>
+</div>
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.filter('capitalize', function() 
+{
+      return function(input) {
+      x="";
+      y=input;
+      for (i=0;i<input.length;i++)
+      {
+      if(i==0) x=x+y[i].toUpperCase(); else x=x+y[i];
+      }
+      return (x);
+    }
+});
+function printto()
+{
+
+var divText  = document.getElementById("print").innerHTML;
+ var NewWindow = window.open('','','width=600,height=600');
+ var doc      = NewWindow.document;
+ doc.write(divText);
+  NewWindow.print();
+ NewWindow.close();
+}
+function CopyToClipboard(containerid) {
+   if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNode(document.getElementById(containerid));
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    
+  }
+}
+function removeDummy() {
+ var elem = document.getElementById('p');
+ elem.parentNode.removeChild(elem);
+}
+function myFunction1(selectTag) {
+  var listValue = selectTag.options[selectTag.selectedIndex].text;
+  document.getElementById("print").style.fontSize = listValue;
+}
+   </script>
+</body>
+</html>
