@@ -1,0 +1,12 @@
+
+Virtualization is technology that allows you to create multiple environment on single hardware . Hypervisors can be installed directly onto hardware (like a server)and take your physical resources to divide them up so that virtual environments can use them.
+
+
+Operating system virtualization happens at the kernel—the central task managers of operating systems. It’s a useful way to run Linux and Windows environments side-by-side. The advantages of virtualisation is -
+
+    Reduces bulk hardware cost
+    Increases security
+    Time efficient
+
+
+

@@ -1,0 +1,19 @@
+The basic commands in ubuntu are:
+ls:list all the directories
+ls -a:list hidden files also
+ctrl+L:clears the screen
+cd:change the directory
+pwd:shows your current position or directory
+mkdir:make directory
+rmdir:delete directory
+cd ..:comes out of the directory
+cd -:comes back to the previous directory
+rm -r:deletes the file recursively
+nano and gedit:text editors
+bc:used for mathematical computations
+ctrl+C:exit
+ctrl+Z:forcefully exit
+touch:special command to create empty file
+sudo:authorise as a super user
+apt:package
+sudo apt-get install:package installer

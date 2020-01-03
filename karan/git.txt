@@ -1,0 +1,30 @@
+ 
+
+	Git is a distributed version control system . It is used for tracking changes in development program.It is designed for 	coordinating work among programmers.
+ 
+	The basic idea is that at certain point we want to make changes in a well running program, then you just copy it and save it,
+	so that your code gets wrong then u have a backup which is also called local version control.
+
+	but it has some drawbacks as the whole data is on a single hardware so if system gets corrupted then ur code gets lost.
+	And if ur project contains many files then u would not be able to find that which file is where...
+
+	So there was a need of server where data can store,then  there comes a centralised version control
+	but it has a single point of failure i.e. if a master server gets corrupted then at that time noone would be able to access 		it.
+	
+	Distributed Version Control :  In it the data is distributed, so there is no scope of single point of failure.
+
+	
+	GitHub is a cloud based platform built around git i.e. Git is a tool and Github is a service using that tool.
+
+
+
+	Some basic git commannds ->
+
+	git init                 ->
+	git add .		 -> prepare for adding files in staging area
+	git status 		 -> tracks the unstaged files
+	git commit -m " "	 ->  add the files in staging area
+	git checkout -b <branch name>->creates and shifts to that branch
+	git push origin branch   -> pushes the staged files in that branch
+	git clone url 		 -> clone the files i.e. from remote to local
+

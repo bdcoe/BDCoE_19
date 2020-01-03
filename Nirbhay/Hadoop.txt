@@ -1,0 +1,23 @@
+Vertical Scaling : Improving the processing power of a computer system by upgrading its hardware .
+Horizontal Scaling : improving the processing power of a system by adding more slave systems to it and using them at the same time .
+
+Hadoop is a framework that allows us to store and process large data set paralelly using distributed file system .
+3 versions of Hadoop have been released till date .
+Hadoop 1 has two compoents :-
+1) HDFS - It breaks large quatity of data and stores it paralelly in different slave systems
+2) Map Reduce – it is used for processing the parallely stored data in HDFS
+
+Daemons are background processes that run in the system.
+Five daemons of Hadoop 1 are :
+*Name Node
+*Data Node
+*Secondary Name Node
+*Job Tracker
+*Task Tracker
+
+HDFS stores the data in the form of blocks .The default block size in Hadoop is 128MB .
+Name Node iis master daemon . It stores metadata(FS image and Editlogs) . Name node receives heartbeat and block reports from data nodes . Heartbeat tells the name node about the active status of data node.Replication factor in Hadoop is 3 by default . It means that data of one data node is stored in three other data nodes .
+Data Nodes are slave daemons . They store actual data .
+Secondary Name Node combines FSImage and Edit logs . It happens at an interval of 1 hour .
+
+

@@ -1,0 +1,48 @@
+############################################
+28 august Kafka Architecture
+
+
+there are two types of messaging system:
+	1. point to point 
+	   In this system message is sent to every intended reciever
+	2. publisher to subscriber
+	   In this system all messages are send to a broker. the broker handles the messages.
+	   when a subscriber wants messages it is provided by the broker.
+
+How does it work ?
+	   In this messaging system producers send their messages to brokers.
+	   messages are divided in topics. each topic is assigned brokers. these brokers store the messages in pieces.
+	   a message is broken into pieces, these pieces are stored in the partitions by broker.
+	   the brokers addreses the pieces by offsets. 
+	   when a topic data is requested. a message is assembled by its offsets in the partitions.
+	   ans it is send back.
+
+###########################################
+Kafka installation
+
+1. download BINARY file only
+2. extract and rename it to kafka then move it to /usr/local
+3. give all permissions
+	sudo chmod -R 777 /usr/local/kafka
+   give ownership
+		sudo chown -R karan /usr/local/kafka
+
+######## ############# ###############
+
+creating an elementry application
+
+1. starting zookeeper
+	cd /usr/local/kafka
+	./bin/zookeeper-server-start.sh config/zookeeper.properties
+2. starting kafka server
+	cd /usr/local/kafka
+	./bin/kafka-server-start.sh config/server.properties
+3. creating a topic
+	./bin/kafka-topics.sh  --zookeeper localhost:2181 --create --topic karan --partitions 2 --replication-factor 1
+
+4. starting console producer
+	./bin/kafka-topics.sh  --zookeeper localhost:2181 --create --topic karan --partitions 2 --replication-factor 1
+
+5. starting console consumer
+
+now any text written in producer console appears in consumer console

@@ -1,0 +1,25 @@
+Kernel is the core part of operating system.Linux is the kernel and the
+operating system is ubuntu.Linux is an open source software and it is
+available for free.
+
+Comparison between  Ubuntu and Windows:-
+1.In Ubuntu there are no drives like those present in windows.There are only
+files or folders.
+2.In ubuntu two files can have same name with the change in case but it is not
+possible in windows.
+
+The advantages are as follows:
+1.Available for free.
+2.Usage is less as compared to windows so it is virus free.
+3.Renaming of file can be done alongwith editing.
+
+In ubuntu before running a file we need to make it executable and for this
+permission is required.Permission is given in 9 digits.First three are for 
+users,next three for group and the last three for others.
+r: for reading
+w: for writing
+x: for execution of file
+If x is not present in the three digits of user than the group and other users 
+can't access the file.
+
+.m is used for hiding the file.

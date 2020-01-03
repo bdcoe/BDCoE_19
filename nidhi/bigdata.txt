@@ -1,0 +1,21 @@
+Big data is a term used for the collection of data which is very large in size
+(of the range>terabytes)and is very complex.The processing of such type of data
+becomes very complex.
+The five V's of big data are:
+1.Volume
+2.Variety(Structured,Unstructured,Semi-structured)
+3.Velocity(processing of data at a very high speed)
+4.Varacity(Accuracy)
+5.Value
+
+Problem:-Large amount of data can't be stored in a system.If stored,then its processing becomes very difficult.So for the proper storage of 
+data and its processing we use Big data technology.
+
+The various tools or technologies are:-
+1.Apache Hadoop
+2.Spark
+3.Kafka
+4.Mongo DB
+5.Hive
+6.Pig etc. 
+  

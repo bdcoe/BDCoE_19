@@ -1,0 +1,18 @@
+BigData:
+-Velocity
+-Variety
+-Velocity
+
+Hadoop:
+version 1:
+	HDFS
+	MapReduce(MR)
+version 2:
+	HDFS
+	YetAnotherResourceNegotiater(YARN)
+
+-pig
+-hive
+
+-kafka
+-spark

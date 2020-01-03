@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>Resume</title>
+</head>
+<body>
+<h1>CURRICULUM VITAE</h1>
+<h2>Personal Information</h2>
+<form>
+  Name:
+  <input type="text" >
+  <br>
+  Mobile Number:
+  <input type="mobilenumber" >
+  <br>
+  Alternate Mobile Number(if any):
+  <input type="moblienumber">
+  <br>
+  Address:
+  <input type="address"  >
+  <br>
+  Email Address:
+  <input type="email">
+  <br>
+<h2>Objective</h2>
+   <input type="text"  rows="5" cols="20" >
+   <br>
+<h2>Educational Qualifications</h2>
+    <h3>Class 10</h3>
+    Passing school with address:
+    <input type="text" ><br>
+    Percentage:
+    <input type="number"><br>
+    Passing Year:
+    <input type="number"><br>
+ <h3>Class 12</h3>
+    Passing school with address:
+    <input type="text" ><br>
+    Percentage:
+    <input type="number"><br>
+    Passing Year:
+    <input type="number"><br>
+ <h3>College</h3>
+    Passing College:
+    <input type="text" ><br>
+    Course Name:
+    <input type="text"><br>
+    Branch Name:
+    <input type="text"><br>
+    Percentage:
+    <input type="number"><br>
+    Passing Year:
+    <input type="number"><br>
+<h3>Summer Training</h3>
+    Company Name:
+    <input type="text"><br>
+    Duration:
+    <p><input type="month">to<input type="month"></p>
+    Project Undertaken:
+    <input type="text"><br>
+    Technology Used:
+    <input type="text"><br>
+<h3>Projects Undertaken</h3>
+    Final Year Project:
+    <input type="text"><button>Add another project</button>
+   
+   
+</form>
+
+

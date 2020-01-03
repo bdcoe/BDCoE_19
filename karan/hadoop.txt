@@ -1,0 +1,24 @@
+
+
+  Hadoop is a system software. It comes under horizontal scaling for storing
+  processing data.
+
+	It has two main versions.
+	  1. Hadoop1 which has HDFS for storing file. 
+		     and MAPREDUCE for processing data.
+
+	  2.Hadoop2  which has HDFS for string file.
+		     and YARN for processing data.
+	
+
+	HDFS - Hadoop distributed file system i.e. data is stored/distributed 
+		across multiple machines.
+
+
+	Some Basic Commands:
+		
+	start-all.sh ->  to start hadoop daemons.
+	stop-all.sh ->  to stop hadoop daemons.
+	hadoop dfs -mkdir 'dir name' ->  to create a dir. in HDFS.
+	hadoop dfs -put 'filename' /'dir name'->  to send normal file in HDFS.
+	hadoop -dfs -rm /'dir name' ->   t remove a HDFS dir. 	

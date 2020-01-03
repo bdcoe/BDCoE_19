@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<head>
+    <title>Resume</title>
+    <link rel="stylesheet" href="resume.css">
+</head>
+
+<body>
+    <h1 class="label">CURRICULUM VITAE</h1>
+    <div class="brdr">
+        <h2 class="labels">Personal Information</h2>
+        <form action="resume.php" method="post">
+            <div class="info">
+                Name:<br>
+                <input type="text" name="name" required>
+                <br>
+                Image:<br>
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <br>
+                Mobile Number:<br>
+                <input type="text" maxlength="10" name="number" required>
+                <br>
+                Alternate Mobile Number(if any):<br>
+                <input type="text" maxlength="10" name="altnumber">
+                <br>
+                Date of birth:<br>
+                <input type="date" name="dob" required>
+                <br>
+                Address:<br>
+                <input type="address" name="address" required>
+                <br>
+                Email Address:<br>
+                <input type="email" name="email" required>
+                <br>
+                Nationality:<br>
+                <input type="text" name="nation" required>
+                <br>
+            </div>
+    </div>
+    <div class="brdr">
+        <h2 class="labels">Career Objective</h2>
+        <textarea rows="5" cols="40" name="text"></textarea>
+        <br>
+    </div>
+    <div class="brdr">
+        <h2 class="labels">Educational Qualifications</h2>
+        <h3 class="labels" style="font-size:27px">Class 10</h3>
+        <div class="info">
+            Passing school with address:<br>
+            <input type="text" name="school" required><br>
+            Percentage:<br>
+            <input type="text" maxlength="2" name="percent" required><br>
+            Passing Year:<br>
+            <input type="text" maxlength="4" name="year" required><br>
+        </div>
+    </div>
+    <div class="brdr">
+        <h3 class="labels" style="font-size:27px">Class 12</h3>
+        <div class="info">
+            Passing school with address:<br>
+            <input type="text" name="school" required><br>
+            Percentage:<br>
+            <input type="text" maxlength="2" name="percent" required><br>
+            Passing Year:<br>
+            <input type="text" maxlength="4" name="year" required><br>
+        </div>
+    </div>
+    <div class="brdr">
+        <h3 class="labels" style="font-size:27px">College</h3>
+        <div class="info">
+            Passing College:<br>
+            <input type="text" name="college"><br>
+            Course Name:<br>
+            <input type="text" name="course"><br>
+            Branch Name:<br>
+            <input type="text" name="branch"><br>
+            Percentage:<br>
+            <input type="text" maxlength="2" name="percent" required><br>
+            Passing Year:<br>
+            <input type="text" maxlength="4" name="year" required><br>
+        </div>
+    </div>
+    <div class="brdr">
+        <h2 class="labels">Summer Training</h2>
+        <div class="info">
+            Company Name:<br>
+            <input type="text" name="company"><br>
+            Duration:
+            <p><input type="date" name="date1">to<input type="date" name="date2"></p>
+            Project Undertaken:<br>
+            <input type="text" name="project"><br>
+            Technology Used:<br>
+            <input type="text" name="tech"><br>
+        </div>
+    </div>
+    <div class="brdr">
+        <h2 class="labels">Projects Undertaken</h2>
+        <div class="info">
+            Final Year Project:
+        </div>
+        <input type="text" name="projects"><button>Add another project</button>
+    </div>
+    <div class="brdr">
+        <h2 class="labels">Acheivements</h2>
+        <button>Add Acheivements</button>
+    </div>
+    <div class="brdr">
+        <h2 class="labels">Enter Skills</h2>
+        <div class="info">
+            Skill 1:<br>
+            <input type="text" name="skill 1" required>
+            <br>
+            Skill 2:<br>
+            <input type="text" name="skill 2" required>
+            <br>
+            Skill 3:<br>
+            <input type="text" name="skill 3">
+            <br>
+            <button>Add Another Skill(if any)</button>
+        </div>
+    </div>
+    <div class="brdr">
+        <h2 class="labels">Professional Experience</h2>
+        <input type="text" name="experience" required>
+    </div>
+    <div class="brdr">
+        <h2 class="labels">Areas of Interest</h2>
+        <input type="text" name="interest" required>
+    </div>
+    <div class="brdr">
+        <h2 class="labels">Date:</h2>
+        <input type="date" name="date"><br>
+        <h2 class="labels">Place:</h2>
+        <input type="text" name="place"><br>
+        <h2 class="labels">Select Resume Template:</h2>
+        <input type="radio" name="template">Template 1
+        <input type="radio" name="template">Template 2
+        <input type="radio" name="template">Template 3
+        <input type="radio" name="template">Template 4<br>
+        <button>Generate Resume</button>
+
+
+    </div>
+    </form>

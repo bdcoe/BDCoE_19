@@ -1,0 +1,8 @@
+############################ SPARK ############################
+26 august
+
+############ spark overview ###########
+1. What is spark ?
+   Spark is open source data processing or cluster computing framework. It runs with hdfs.
+2. Why do we need spark ?
+   Spark is almost 10 times faster than spark.

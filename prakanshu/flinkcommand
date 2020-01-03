@@ -1,0 +1,11 @@
+
+How to install flink and start word count
+
+1.java -version
+2.Download tar file of apache flink "https://www.apache.org/dyn/closer.lua/flink/flink-1.9.0/      flink-1.9.0-bin-scala_2.11.tgz"
+3.tar xzf flink-*.tgz 
+4.cd flink-1.9.0
+5../bin/start-cluster.sh  # Start Flink
+6.nc -l 9000
+7../bin/flink run examples/streaming/SocketWindowWordCount.jar --port 9000
+8.tail -f log/flink-*-taskexecutor-*.out

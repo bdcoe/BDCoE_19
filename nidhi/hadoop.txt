@@ -1,0 +1,34 @@
+Hadoop is one of the big data tools which is helpful in storage and processing of large amount of data.It is an opensurce framework that 
+works on the distributed file system i.e.a large file is divided into sub parts of equal size and after there processing they are again
+combined for the final processing.Hadoop works on master-slave architecture i.e. one system is considered as the master which divides the
+data among the rest of the systems which are considered as it's slaves.
+The processing speed can be inceased in two ways:Vertical Scaling and Horizontal Scaling.
+1.Vertical Scaling:It is the process of updating the hardware of a single system in order to increase its memory.
+2.Horizontal Scaling:It is the process in which large amount of data is divided into parts so that the processing time can be decreased.
+Large amount of data is stored in the master system and parts of data are stored in slaves.Master contains the meta data.
+The two differant versions of hadoop are hadoop1 and hadoop2.
+HADOOP1:
+It has two parts:
+1.HDFS(Hadoop Distributed File System):It is used for storage of data.
+2.Map Reduce:It works for processing of data as well as resource management.
+Daemons:
+1.Name Node:Mater Daemon
+2.Data Node
+3.Secondary Name Node
+4.Job tracker
+5.Task tracker
+
+HADOOP 2:
+It has two parts:
+1.HDFS(Hadoop Distributed File System):It is used for storage of data.
+2.YARN(Yet Another Resource Negotiator):It works as resource management.
+Daemons:
+1.Name Node:Master Daemon
+2.Data Node
+3.Secondary Name Node:FS Image+Edit Logs.
+4.Resource Manager
+5.Node Manager
+
+Difference:In Hadoop1,if the master system fails then the entire system gets failed(single point of failure) while in Hadoop2,if the master
+system gets failed the secondary name node can acts as a backup.Hadoop1 is slower than Hadoop2 as it forms clusters which is time consuming
+and a lot of memory space is required for this purpose.

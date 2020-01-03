@@ -1,0 +1,40 @@
+﻿body {
+  background-color: lightgray;
+}
+.label{
+text-align:center;
+text-decoration:underline;
+font-size:50px;
+}
+.labels{
+	text-decoration:underline;
+	font-size:35px;
+}
+.info
+{
+	font-size:25px;
+}
+.brdr
+{
+	border:2px solid black;
+	padding:5px;
+	margin-top:30px;
+}
+.button2
+ {
+	 border-radius: 50%;
+ }
+.button {
+ background-color:white;
+  border: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 5px;
+}
+.button:hover
+{
+	background color:blue;
+}

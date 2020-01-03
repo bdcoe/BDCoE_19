@@ -1,0 +1,24 @@
+virtualisation
+##two types
+type 1
+ type 1 consist of hardware then os then virtual machine which is know as hypervision then on hypervision we can install various type of  operating system in it.
+type 2
+in type 2 we have hardware then we have hypervision and on hypervision we are installing various typrs of opearting system .
+
+##ADVANTAGE OF TYPE 2 OVER TYPE 1 VIRTUALISATION
+in type 1 in we allocate 8gb ram to a particular operating system then is it utilise complete 8gb ram but the sinerio is different in the type 2 operarting system . in type 2 oprerating system if we allocate 8gb ram to a particular oprating system then it will initial only the memory it required not the whole memory at a time
+
+BUT
+
+type 1 virtualisation is faster than type 2 virtualisation.
+
+#kernel- the core program of operating system.
+
+#OPERATING SYSTEM
+*memory management operating system
+*process mnAGEMENT operating system
+*file storage operating system 
+* storage management operating system
+
+##internet also works by virtualisation
+

@@ -1,0 +1,57 @@
+##SPARK
+->spark is better than hadoop as
+*process data in real time can be done faster
+*easy to use as compasre hadoop	
+*fastrt processing speed
+
+spark  make blocks of default memory space of 128 MB
+
+->IN spark ata is convergted in the RDD(resilient disturbed data)
+rdd is resilient. resilient means reliable as they make the copy of different among them.in any one get lost we can recover them from other blocck
+
+RDD is immutable
+RDD is consistence
+RDD help to manage fault or corrupted file from the data set
+ 1 operation requires 1RDD
+
+##operation of RDD
+1. transforme->mapping
+2. action ->action or operation
+
+##
+saprk can run with
+1. HDMS
+2. YARN
+3. ALONE ALONE WITHOUT USING HADOOP
+
+##
+WE CANNOT REPLCE HADoop with sparks as spark uses hadoop file system like HDMS AND YARN to do the operation .
+sapr is just a extension of hadoop
+
+##SPARK FEATURES
+1. speed
+2. polygot-can use multiple language
+3. advanced analyst
+4. memory computation
+5. hadoop integration
+6. machine learing
+7. lazy action
+
+##SPARKS ECOSYSTEM
+1. SPARK CORE
+2. SPARK STREAMING
+3. SPARK SQL
+4. MLlib
+5. grapgx
+
+##
+data source api
+2. data frame api
+3. interpeter &optimizer
+4. sql service
+
+ml lib 3 technique
+1. classificAtion
+2. clustering
+3. collaboration filering
+
